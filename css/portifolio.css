@@ -1,0 +1,414 @@
+html{
+    font-family: cursive;
+    font-size: 16px;
+    color: var(--light-color);
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+:root{
+    --primary-color: rgb(146, 227, 169);;
+    --secondary-color: #f7bcf7;
+    --light-color: #ffffff;
+    --bg-color1:#171a1c;
+    --bg-color2:#22282a;
+    --padding: 5%;
+    --newcolor: rgb(21, 21, 223);
+    --main-tarns:0.7s;
+}
+/* start header  */
+header{
+    background-color: var(--bg-color1);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px var(--padding);
+    position: fixed;
+    z-index: 12;
+}
+header .logo{
+    font-size: 2rem;
+    letter-spacing: 0.12rem;
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+}
+header .logo span{
+    color: var(--primary-color)
+}
+header .navbar ul li {
+    float: left;
+    position: relative;
+}
+header .navbar ul {
+    list-style: none;
+}
+header .navbar ul li a{
+    padding: 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+    display: block;
+    font-size: 1.2rem;
+}
+header .navbar ul li a:hover{
+    background-color: var(--primary-color);
+    color: black;
+}
+header .navbar ul li ul {
+    width: 200px;
+    position: absolute;
+    background-color: var(--bg-color2);
+    margin-top: 5px;
+    display: none;
+}
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(1, 1, 1, 1);
+}
+header .navbar ul li ul li ul{
+    left: 200px;
+    top: 0;
+}
+header .navbar ul li:focus-within > ul ,
+header .navbar ul li:hover > ul
+{
+    display: initial;
+}
+#menubar{
+    display: none;
+}
+header label{
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+@media(max-width:950px){
+    header{
+        padding: 20px;
+    }
+    header .logo{
+        font-size: 1.5rem;
+    }
+    header label{
+        display: initial;
+    }
+    header .navbar{
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background-color: var(--bg-color1);
+    }
+    header .navbar ul li {
+        width: 100%;
+    }
+    header .navbar ul li ul li a{
+        color: red;
+    }
+    header .navbar ul li ul {
+        width: 100%;
+        position: relative;
+    }
+    header .navbar ul li ul li{
+        width: 100%;
+        left: 0;
+    }
+    header .navbar ul li ul li ul{
+        left: 0;
+    }
+    #menubar:checked ~ .navbar ,
+    #menubar:hover ~ .navbar
+    {
+        display: initial;
+    }
+}
+
+
+
+
+
+.first .container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--padding);
+    justify-content: space-between;
+    background-color: var(--bg-color1);
+    height: 100vh;
+}
+
+.first .container .text{
+    position: relative;
+    bottom: 50px;
+}
+.first .container .text h1{
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+.first .container .text h2{
+    font-size: 2.5rem;
+}
+.first .container .text h2 span{
+    color: var(--primary-color);
+}
+.first .container .text h3{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+.first .container .text h3 span{
+    color: var(--primary-color);
+}
+.first .social{
+    margin-bottom: 2rem;
+}
+.first .social i{
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    transition: var(--main-tarns);
+} 
+.first .social a:not(:nth-child(4)){
+    color: blue;
+}
+.first .social a:nth-child(4){
+    color: #ffffff;
+}
+.first .social i:hover{
+    transform: scale(1.2 , 1.2);
+}
+.first .container .image {
+    width: 40%;
+    height: 70%;
+    position: relative;
+}
+.first .container .image img{
+    position: absolute;
+    bottom: 0px;
+    align-self: flex-end;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-tarns);
+}
+.first .container .image:hover .shape{
+    bottom: 40px;
+}
+.first .container .image:hover .me{
+    padding-right: 5%;
+}
+
+/* End header  */
+@media(max-width:950px){
+    .first .container .image{
+        display: none;
+    }
+    .first .container .text h1{
+        font-size: 1.3rem;
+    }
+    .first .container .text h2 ,h3{
+        font-size: 1.3rem;
+    }
+    .first .container .text h3{
+        font-size: 1.3rem;
+    }
+    .first .container .text .social a i{
+        font-size: 1.7rem;
+    }
+}
+
+/* start section two */
+.two {
+    background-color: var(--bg-color2);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.two .imag{
+    width: 40%;
+    height: 80%;
+}
+.two .imag img{
+    width: 100%;
+    height: 90%;
+}
+.two .text{
+    width: 50%;
+    color: var(--primary-color);
+}
+.two .text h1{
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: .5rem;
+
+}
+.two .text p{
+    width: 80%;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--light-color);
+    letter-spacing: 0.1rem;
+}
+/* End section two */
+@media(max-width:950px){
+    .two{
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding-bottom: 20px;
+    }
+    .two .text{
+        height: 40%;
+        width: 80%;
+    }
+    .two .text h1 {
+        font-size: 1.2rem;
+    }
+    .two .text p{
+        font-size: 1rem;
+    }
+    .two .imag {
+        width: 80%;
+        height: 40%;
+    }
+}
+
+/* Start section three */
+.three {
+    background-color: var(--bg-color1);
+    padding: var(--padding);
+}
+.card {
+    background-color: var(--bg-color1);
+    padding: 20px;
+    transition: var(--main-tarns);
+    height: 80%;
+}
+.three #serv {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 100px;
+    padding-bottom: 3rem;
+    color: var(--primary-color);
+}
+.three .cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.three .cards .card em{
+    font-size: 4rem;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+.three .cards .card h1{
+    text-align: center;
+    color: var(--secondary-color);
+}
+.three .cards .card{
+    background-color: var(--bg-color2);
+    border-radius: 30px;
+    width: 300px;
+    height: 450px;
+}
+.three .cards .card p{
+    width: 90%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.three .cards .card:hover{
+    transform: scale(1.2);
+}
+/* End section three */
+@media(max-width:950px){
+    .three{
+        padding: 10px 0;
+    }
+    .three .cards{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .three .cards .card{
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .three .cards .card:hover{
+        transform: scale(1.1);
+    }
+    .three .cards .card p{
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    .three .cards .card h1{
+        padding: 8px 0;
+    }
+    .three #serv {
+        font-size: 3.5rem;
+    }
+}
+
+/* Start footer */
+
+footer{
+    background-color: var(--bg-color2);
+    height: 300px;
+    text-align: center;
+    padding: var(--padding);
+}
+footer .email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+footer .tele {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+footer .email i{
+    padding-right: 8px;
+    color: var(--primary-color);
+}
+footer .tele i{
+    padding-right: 8px;
+    color: var(--primary-color);
+}
+footer .cont h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+/* End footer  */
+
+/* Start Media Quiers */
+@media(max-width:950px) {
+    footer .cont h1{
+        font-size: 2.5rem;
+    }
+    footer .cont .email{
+        font-size: 1.1rem;
+    }
+    footer .cont .tele {
+        font-size: 1.1rem;
+    }
+    footer{
+        height: 230px;
+    }
+}
+
+/* End Media Quiers */
